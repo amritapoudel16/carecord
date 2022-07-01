@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+
+  overflow-x: hidden;
+}
+.containerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  font-weight: 600;
+  margin-top: 50px;
+}
+.doctorDescription {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  margin-bottom: 30px;
+}
+
+.cardContainer {
+  width: 100vw;
+}
+.icons {
+  width: 100%;
+display: flex;
+justify-content: flex-end;
+margin-right: 80px;
+
+
+}

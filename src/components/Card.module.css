@@ -1,0 +1,44 @@
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 6px 12px;
+  height: 75vh;
+  width: 23vw;
+  border-radius: 15px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  background-color: #fcfcfc;
+  overflow: hidden;
+}
+.cardImage {
+  height: 40vh;
+  width: 25vw;
+  margin-top: -2em;
+  object-fit: cover;
+}
+.doctorName {
+  font-size: 25px;
+  font-weight: 600;
+}
+.doctorDepartment {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: lightseagreen;
+  font-size: 15px;
+}
+.cardButton {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border-style: none;
+  font-family: "Poppins", sans-serif;
+  background-color: lightseagreen;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.doctorDescription {
+  padding: 20px;
+  text-align: justify;
+}
