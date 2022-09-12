@@ -4,9 +4,10 @@
 }
 .container {
   height: 100vh;
+  position: relative;
 }
 .container1 {
-  background-image: url("/public/images/i5.jpg");
+  background-image: url("/public/images/FrontPage2.png");
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -17,18 +18,25 @@
   width: 50%;
   position: absolute;
   z-index: 2;
-  top: 35vh;
+  top: 25vh;
   left: 120px;
   color: white;
   font-family: "Poppins", sans-serif;
 }
-h5 {
+
+.container2 h5 {
   color: lightseagreen;
+  letter-spacing: 1px;
 }
-p {
+.container2 h1 {
+  display: flex;
+  justify-content: flex-start;
+}
+.container2 p {
   text-align: justify;
   width: 80%;
   margin-top: 20px;
+  margin-left: 0;
 }
 .homeButton {
   padding: 15px;
@@ -50,7 +58,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-
   top: 0;
   left: 0;
   z-index: 999;
@@ -87,44 +94,53 @@ p {
   justify-content: space-around;
 }
 .appointmentButton {
-  padding: 10px;
+  padding: 10px 25px;
   border-radius: 25px;
   border-style: none;
   font-family: "Poppins", sans-serif;
   background-color: #20b2aa;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
-  margin: auto;
-  width: 30%;
+  margin-top: 25px;
 }
 .title {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
   font-size: 18px;
+  color: black;
 }
-.appointmentInput {
-  margin: 10px 0;
-  border-radius: 10px;
-  padding: 4px 8px;
-  
-}
-.appointmentSelect {
-  margin: 10px 0;
-  width: 100%;
-  border-radius: 10px;
-  padding: 4px 8px;
-}
-.appointmentLabel {
-  font-weight: 600;
-}
-.cross {
-  position: fixed;
-  top: 23.5%;
-  left: 72%;
-  cursor: pointer;
-  margin-left: -50px;
-  margin-top: -50px;
-  color: darkgrey;
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .container2 {
+    width: 100%;
+    top: 100px;
+    left: 0;
+    height: auto;
+  }
+  .container2 h1 {
+    font-size: 35px;
+    text-align: center;
+    padding: 0 8px;
+    
+  }
+  .container2 h5 {
+    text-align: center;
+  }
+  .container2 p {
+    width: 100% !important;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 30px;
+  }
+  .appointmentButton {
+    margin-top: 40px;
+    margin-left: 70px;
+  }
 }

@@ -1,0 +1,12 @@
+.departmentIcons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: -25px;
+}
+h1 {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,75 +1,84 @@
 .container {
-    padding: 10px;
-    margin: auto;
-    width: 50%;
-    height: 63vh;
-    display: flex;
-    position: fixed;
-    top: 15%;
-    left: 25%;
-    border-radius: 20px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  padding: 10px;
+  margin: auto;
+  width: 50%;
+  height: 63vh;
+  display: flex;
+  top: 40%;
+  left: 25%;
+  border-radius: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.imageContainer {
+  background-image: url("/public/images/welcome.png");
+  width: 25vw;
+  height: 63vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: -10px;
+}
+.signInInput {
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 100%;
+  border: 0.3px solid;
+}
+
+.signInLabel {
+  font-weight: 600;
+  width: 100%;
+}
+.signInForm {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+.signUpButton {
+  padding: 10px;
+  border-radius: 25px;
+  border-style: none;
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin: auto;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.signHead {
+  padding: 10px;
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+.account {
+  margin-top: 20px;
+}
+.signUpLink {
+  text-decoration: underline;
+  color: black;
+}
+.forgotpassword {
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
   }
   .imageContainer {
-    background-image: url("/public/images/welcome.png");
-    width: 25vw;
-    height: 63vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: -10px;
+    display: none;
   }
-  .signInInput {
-    margin: 10px 0;
-    border-radius: 10px;
-    padding: 5px 10px;
-    width: 100%;
-    border: 0.3px solid;
-  }
-  
-  .signInLabel {
-    font-weight: 600;
-    width: 100%;
-  }
-  .signInForm {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  .signUpButton {
-    padding: 10px;
-    border-radius: 25px;
-    border-style: none;
-    font-family: "Poppins", sans-serif;
-    background-color: #000;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    margin: auto;
-    width: 100%;
-    margin-top: 30px;
-  }
- 
-  .signHead{
-      padding: 10px;
-      font-size: 35px;
-      margin-bottom: 25px;
-  }
-  .account{
-    margin-top: 20px;
-  }
-  .signUpLink{
-    text-decoration: underline;
-    color: black;
-    
-  }
-  .forgotpassword{
-    margin-top: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
+}

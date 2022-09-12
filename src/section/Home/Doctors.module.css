@@ -8,16 +8,18 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 70px;
 }
 h1 {
   font-weight: 600;
-  margin-top: 50px;
+  margin-bottom: 20px;
 }
 .doctorDescription {
   text-align: center;
-  font-size: 18px;
-  color: gray;
+  font-size: 16px;
+  color: rgb(50, 48, 48);
   margin-bottom: 30px;
+  font-weight: 400 !important;
 }
 
 .cardContainer {
@@ -25,9 +27,7 @@ h1 {
 }
 .icons {
   width: 100%;
-display: flex;
-justify-content: flex-end;
-margin-right: 80px;
-
-
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 80px;
 }

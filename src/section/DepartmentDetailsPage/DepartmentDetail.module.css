@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.departmentContainer {
+  background-image: url("https://images.unsplash.com/photo-1658227658336-f7354bc5a568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNsaW5pY3xlbnwwfHwwfGJsYWNrfA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  height: 90vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: antiquewhite;
+}
+p {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  text-justify: inter-word;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}

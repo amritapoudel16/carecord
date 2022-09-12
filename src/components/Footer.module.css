@@ -3,3 +3,10 @@
   background-color: black;
   overflow-x: hidden;
 }
+.copyright{
+  color: white;
+  margin-top: 7rem;
+  display: flex;
+  align-items: center;
+ justify-content: center;
+}

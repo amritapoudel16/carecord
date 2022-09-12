@@ -1,0 +1,51 @@
+.mobileWrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  color: black;
+}
+.mobileAbsolute {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 16, 16, 0.445);
+  left: 0;
+  top: 0;
+  z-index: 9991;
+}
+.mobileContain {
+  padding: 20px 40px;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 99999;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.mobileContain li {
+  margin-bottom: 30px;
+  border-bottom: 1px solid lightslategray;
+  padding-bottom: 10px;
+}
+
+.mobileContain li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+.closeNavbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  align-items: center;
+}
+.logo img {
+  height: 70px;
+  width: 70px;
+}

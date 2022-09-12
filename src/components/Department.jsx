@@ -1,62 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Department.module.css";
+import apicall from "./../api/apicall";
 
 const Department = () => {
-  const departments = [
-    {
-      id: 1,
-      name: "Neurology",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 2,
-      name: "Opthalmology",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 3,
-      name: "Dental",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 4,
-      name: "Surgical",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 5,
-      name: "Cardiology",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 6,
-      name: "X-Ray",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 7,
-      name: "Dental",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 8,
-      name: "Traumatology",
-      description: "Lorem ipsum dolor sit amet",
-    },
-    {
-      id: 9,
-      name: "Neurology",
-      description: "Lorem ipsum dolor sit amet",
-    },
-  ];
+  const [departments, setDepartment] = useState([]);
+  const navigate = useNavigate();
+
+  const getDepartment = async () => {
+    const result = await apicall({
+      url: "/departments?accept=Application/json",
+    });
+    setDepartment(result.data.Departments);
+    console.log(result);
+  };
+
+  useEffect(() => {
+    getDepartment();
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div id="department" className={styles.container}>
       <div className={styles.image}></div>
+
       <div className={styles.gridContainer}>
         {departments.map((department, id) => (
-          <div className={styles.gridItems}>
-            <div key={departments.id} className={styles.departmentName}>{department.name}</div>
-            <div key={departments.id} className={styles.departmentDescription}>{department.description}</div>
+          <div
+            className={styles.gridItems}
+            key={id}
+            onClick={() =>
+              navigate("/departmentdetails/" + department.department_id)
+            }
+          >
+            <div key={departments.id} className={styles.departmentName}>
+              {department.department_name}
+            </div>
+            <div key={departments.id} className={styles.departmentDescription}>
+              {department.description}
+            </div>
           </div>
         ))}
       </div>

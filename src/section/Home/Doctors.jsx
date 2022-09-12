@@ -1,9 +1,24 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import Card from "../../components/Card";
 import styles from "./Doctors.module.css";
-import {FaChevronCircleLeft, FaChevronCircleRight} from "react-icons/fa";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import apicall from "../../api/apicall";
 const Doctors = () => {
+  const [doctors, setDoctors] = useState([]);
+  const getDoctor = async () => {
+    const result = await apicall({
+      url: "/doctors?accept=Application/json",
+    });
+    if (result.status === 200) {
+      setDoctors(result.data.Doctors);
+    }
+    console.log(result);
+  };
+  useEffect(() => {
+    getDoctor();
+  }, []);
+
   const settings = {
     infinite: true,
     centerPadding: "60px",
@@ -11,91 +26,44 @@ const Doctors = () => {
     swipeToSlide: true,
     className: "center",
     centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
   };
 
   const ref = useRef();
 
   console.log(ref);
-
-  const doctorsList = [
-    {
-      id: 1,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 2,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 3,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 4,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 5,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 6,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 7,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-    {
-      id: 8,
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-      name: "Dr. Pabita Pun",
-      department: "Neurologist",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,",
-    },
-  ];
   const handleBookClick = (doctor) => {
     console.log(doctor);
   };
   return (
-    <div className={styles.containerWrapper}>
+    <div id="doctors" className={styles.containerWrapper}>
       <h1>Our Qualified Doctors</h1>
       <p className={styles.doctorDescription}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -105,9 +73,9 @@ const Doctors = () => {
 
       <div className={styles.cardContainer}>
         <Slider ref={ref} {...settings}>
-          {doctorsList.map((item, id) => {
+          {doctors.map((item, id) => {
             return (
-              <div>
+              <div key={id}>
                 <Card
                   key={item.id}
                   doctor={item}
@@ -119,9 +87,12 @@ const Doctors = () => {
         </Slider>
       </div>
       <div className={styles.icons}>
-      <div onClick={() => ref.current.slickPrev()}><FaChevronCircleLeft size={30} cursor = "pointer" color="gray"/> </div>
-      <div onClick={() => ref.current.slickNext()}><FaChevronCircleRight size={30} cursor = "pointer" color="gray"/> </div>
-      
+        <div onClick={() => ref.current.slickPrev()}>
+          <FaChevronCircleLeft size={30} cursor="pointer" color="gray" />{" "}
+        </div>
+        <div onClick={() => ref.current.slickNext()}>
+          <FaChevronCircleRight size={30} cursor="pointer" color="gray" />{" "}
+        </div>
       </div>
     </div>
   );

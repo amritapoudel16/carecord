@@ -2,10 +2,9 @@
   padding: 10px;
   margin: auto;
   width: 65%;
-  height: 85vh;
+  height: 90vh;
   display: flex;
-  position: fixed;
-  top: 8%;
+  top: 15%;
   left: 20%;
   border-radius: 20px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
@@ -14,7 +13,7 @@
 .imageContainer {
   background-image: url("/public/images/welcome.png");
   width: 32vw;
-  height: 85vh;
+  height: 90vh;
   background-size: contain;
   background-repeat: no-repeat;
   margin: -10px;
@@ -53,18 +52,30 @@ h2 {
   width: 100%;
   margin-top: 40px;
 }
-.halfForm1{
-    margin-right: 40px;
+.halfForm1 {
+  margin-right: 40px;
 }
-.signHead{
-    padding: 10px;
-    font-size: 35px;
-    margin-bottom: 30px;
+.signHead {
+  padding: 10px;
+  font-size: 35px;
+  margin-bottom: 30px;
 }
-.account{
+.account {
   margin-top: 20px;
 }
-.signInLink{
+.signInLink {
   text-decoration: underline;
   color: black;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageContainer {
+    display: none;
+  }
 }
