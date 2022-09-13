@@ -1,12 +1,16 @@
 import { React, useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
+import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 import { BsFillXCircleFill } from "react-icons/bs";
+import { Navigate } from "react-router-dom";
 import apicall from "../api/apicall";
 import styles from "./AppointmentModal.module.css";
 
 const AppointmentModal = ({ open = false, setOpen }) => {
   const [doctors, setDoctors] = useState([]);
+  const navigate = useNavigate();
+  const [appointmentToDoctor, setAppointmentToDoctor] = useState(false);
   const [visible, setVisible] = useState(false);
   const getDoctor = async () => {
     const result = await apicall({
@@ -52,7 +56,9 @@ const AppointmentModal = ({ open = false, setOpen }) => {
         doctor_id: appointment.doctor_id,
       },
     });
-    
+    if (res.status === 200) {
+      setOpen((open) => !open);
+    }
   };
   const onDateChanged = (date) => {
     setStartDate(date);
@@ -127,52 +133,60 @@ const AppointmentModal = ({ open = false, setOpen }) => {
               />
 
               <br />
-              <label className={styles.appointmentLabel}>
-                Preferred doctor if any:
-              </label>
-              <br />
-              <div>
-                <input
-                  className={styles.appointmentInput}
-                  type="text"
-                  name="searchDoctorName"
-                  value={appointment.searchDoctorName}
-                  onChange={(e) => {
-                    setAppointment({
-                      ...appointment,
-                      searchDoctorName: e.target.value,
-                    });
-                    setVisible(true);
-                  }}
-                  placeholder="Search doctors"
-                />
-                <div className={styles.doctorList}>
-                  {visible &&
-                    doctors.map((val, key) => {
-                      if (
-                        val.first_name
-                          .toLowerCase()
-                          .includes(appointment.searchDoctorName.toLowerCase())
-                      ) {
-                        return (
-                          <div
-                            key={key}
-                            onClick={() => {
-                              setAppointment({
-                                ...appointment,
-                                searchDoctorName: val.first_name,
-                                doctor_id: val.doctor_id,
-                              });
-                              setVisible(false);
-                            }}
-                          >
-                            <ul>{val.first_name}</ul>
-                          </div>
-                        );
-                      }
-                    })}
+              {!appointmentToDoctor ? (
+                <div>
+                  <label className={styles.appointmentLabel}>
+                    Preferred doctor if any:
+                  </label>
+                  <br />
+                  <div>
+                    <input
+                      className={styles.appointmentInput}
+                      type="text"
+                      name="searchDoctorName"
+                      value={appointment.searchDoctorName}
+                      onChange={(e) => {
+                        setAppointment({
+                          ...appointment,
+                          searchDoctorName: e.target.value,
+                        });
+                        setVisible(true);
+                      }}
+                      placeholder="Search doctors"
+                    />
+                    <div className={styles.doctorList}>
+                      {visible &&
+                        doctors.map((val, key) => {
+                          if (
+                            val.first_name
+                              .toLowerCase()
+                              .includes(
+                                appointment.searchDoctorName.toLowerCase()
+                              )
+                          ) {
+                            return (
+                              <div
+                                key={key}
+                                onClick={() => {
+                                  setAppointment({
+                                    ...appointment,
+                                    searchDoctorName: val.first_name,
+                                    doctor_id: val.doctor_id,
+                                  });
+                                  setVisible(false);
+                                }}
+                              >
+                                <ul>{val.first_name}</ul>
+                              </div>
+                            );
+                          }
+                        })}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div></div>
+              )}
             </div>
           </div>
           <button className={styles.appointmentButton} type="submit">

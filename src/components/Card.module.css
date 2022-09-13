@@ -5,7 +5,7 @@
   flex-direction: column;
   margin: 6px 12px;
   height: 450px;
-  width: 350px;
+  width: 400px;
   border-radius: 15px;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   background-color: #fcfcfc;
@@ -16,10 +16,11 @@
   background: url("/public/images/bg.jpg");
   position: relative;
   height: 250px;
-  width: 100%;
+  width: 400px;
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .cardImage {
   height: 150px;
@@ -27,12 +28,10 @@
   border-radius: 50%;
   border: 1px solid black;
   background-color: white;
-  margin-top: -2em;
   object-fit: cover;
   overflow: hidden;
   position: absolute;
   bottom: 30px;
-  margin: auto;
 }
 .doctorName {
   font-size: 25px;
@@ -61,5 +60,12 @@
   padding: 10px;
   text-align: justify;
 }
-
-
+@media screen and (max-width: 768px) {
+  .cardContainer .doctor_image_wrapper,
+  .doctorName,
+  .doctorDepartment,
+  .doctorDescription,
+  .cardButton {
+    margin-left: -140px;
+  }
+}

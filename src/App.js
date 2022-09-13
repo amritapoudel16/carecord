@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import DoctorDetails from "./section/DoctorDetails/DoctorDetails";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
 
 export const UserContext = React.createContext();
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/userdashboard" element={<UserDashboard />} />
           ) : null}
         </Routes>
+        <Footer />
       </UserContext.Provider>
       <ToastContainer />
     </div>
