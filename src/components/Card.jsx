@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
 
+const SERVER = process.env.REACT_APP_SERVER_URL;
 const Card = ({ doctor, onBookClick, socialMediaLink, onmousecClick }) => {
   const navigate = useNavigate();
 
@@ -11,7 +12,11 @@ const Card = ({ doctor, onBookClick, socialMediaLink, onmousecClick }) => {
       onClick={() => navigate("/doctordetails/" + doctor.doctor_id)}
     >
       <div className={styles.doctor_image_wrapper}>
-        <img src={doctor.picture} alt="" className={styles.cardImage} />
+        <img
+          src={SERVER + doctor.picture}
+          alt=""
+          className={styles.cardImage}
+        />
       </div>
       <div className={styles.doctorName}>{doctor.first_name}</div>
       <div className={styles.doctorDepartment}>{doctor.email}</div>

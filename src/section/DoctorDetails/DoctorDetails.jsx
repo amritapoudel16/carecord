@@ -11,6 +11,7 @@ import {
   MdOutlineLanguage,
 } from "react-icons/md";
 const DoctorDetails = () => {
+  const SERVER = process.env.REACT_APP_SERVER_URL;
   const { id } = useParams();
   const [open, setOpen] = useState(false);
   const [doctor, setDoctor] = useState({});
@@ -22,8 +23,7 @@ const DoctorDetails = () => {
     if (result.status === 200) {
       setDoctor(result.data.doctor);
       console.log(result.data);
-      // setDepartment(result.data.selectedDoctor[0].Department[0]);
-    }
+        }
   };
 
   useEffect(() => {
@@ -33,10 +33,7 @@ const DoctorDetails = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.doctorsImg}>
-          <img
-            src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvY3RvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-            alt="home"
-          />
+          <img src={SERVER + doctor.picture} alt="home" />
         </div>
         <div className={styles.doctorDes}>
           <h3>{doctor.first_name}</h3>
@@ -55,9 +52,7 @@ const DoctorDetails = () => {
           </p>
           <div className={styles.doctorAddress}>
             <MdLocationPin size={25} />
-            <div style={{ margin: " 0 10px" }}>
-              {doctor.address}
-            </div>
+            <div style={{ margin: " 0 10px" }}>{doctor.address}</div>
           </div>
           <div className={styles.doctorEmail}>
             <MdEmail size={25} />
@@ -74,7 +69,9 @@ const DoctorDetails = () => {
             </div>
 
             <div style={{ margin: " 0 10px" }}>
-              <button   onClick={() => setOpen((open) => !open)}>Get Appointment</button>
+              <button onClick={() => setOpen((open) => !open)}>
+                Get Appointment
+              </button>
               <AppointmentModal
                 open={open}
                 setOpen={() => setOpen((a) => !a)}

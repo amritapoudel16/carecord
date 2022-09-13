@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const API = process.env.REACT_APP_SERVER_URL;
 
@@ -9,7 +9,7 @@ const apicall = async ({ method = "get", url = "", data = {} }) => {
   try {
     res = await axios({
       method: method,
-      url: API + url,
+      url: API + "/api" + url,
       data: data,
       headers: {
         Authorization: `Bearer ${token}`,

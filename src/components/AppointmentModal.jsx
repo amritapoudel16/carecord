@@ -25,27 +25,34 @@ const AppointmentModal = ({ open = false, setOpen }) => {
     selectedDate: "",
     favorableTime: "",
     searchDoctorName: "",
+    doctor_id: null,
   });
-  
-  
+
   const [startDate, setStartDate] = useState(new Date());
   const handleChange = (e) => {
     console.log(e.target.value);
     setAppointment({ ...appointment, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    let apiDate = new Date(startDate);
     const res = await apicall({
       method: "post",
       url: "/appointments",
       data: {
-        appointment_date: appointment.selectedDate,
+        appointment_date:
+          apiDate.getFullYear() +
+          "-" +
+          (apiDate.getMonth() + 1) +
+          "-" +
+          apiDate.getDate(),
         appoint_time: appointment.favorableTime,
         symptoms: appointment.symptoms,
-        
+        doctor_id: appointment.doctor_id,
       },
     });
+    
   };
   const onDateChanged = (date) => {
     setStartDate(date);
@@ -111,17 +118,14 @@ const AppointmentModal = ({ open = false, setOpen }) => {
                 Select preferable time<span>*</span>:
               </label>
               <br />
-              <textarea
+              <input
+                type="time"
+                name="favorableTime"
                 className={styles.appointmentInput}
-                type="text"
-                placeholder="eg: 9:30am to 10:30am"
-                name="symptoms"
-                rows={2}
-                cols={40}
-                maxLength={20}
                 value={appointment.favorableTime}
                 onChange={handleChange}
               />
+
               <br />
               <label className={styles.appointmentLabel}>
                 Preferred doctor if any:
@@ -157,13 +161,12 @@ const AppointmentModal = ({ open = false, setOpen }) => {
                               setAppointment({
                                 ...appointment,
                                 searchDoctorName: val.first_name,
+                                doctor_id: val.doctor_id,
                               });
                               setVisible(false);
                             }}
                           >
-
-                            <ul>{val.first_name}
-                            </ul>
+                            <ul>{val.first_name}</ul>
                           </div>
                         );
                       }
