@@ -1,11 +1,14 @@
+.contain {
+  height: 90vh;
+}
 .container {
   padding: 10px;
   margin: auto;
   width: 50%;
-  height: 63vh;
+  height: 65vh;
   display: flex;
-  top: 40%;
-  left: 25%;
+  position: relative;
+  top: 10%;
   border-radius: 20px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
@@ -13,7 +16,7 @@
 .imageContainer {
   background-image: url("/public/images/welcome.png");
   width: 25vw;
-  height: 63vh;
+  height: 65vh;
   background-size: contain;
   background-repeat: no-repeat;
   margin: -10px;
@@ -71,12 +74,19 @@ h2 {
   color: black;
 }
 @media screen and (max-width: 768px) {
+  .contain {
+    height: auto;
+    margin: 0;
+    
+  }
   .container {
     width: 100%;
+  
     height: auto;
     margin: 0;
     justify-content: center;
-    align-items: center;
+    
+    border-radius: 0px;
   }
   .imageContainer {
     display: none;

@@ -23,7 +23,7 @@
 
 .modalContain {
   padding: 20px 30px;
-  height: 55vh;
+  height: 60vh;
   width: 42vw;
   background-color: white;
   z-index: 99999;
@@ -98,8 +98,8 @@ ul {
 }
 .cross {
   position: fixed;
-  top: 28%;
-  left: 72.5%;
+  top: 27%;
+  left: 73%;
   cursor: pointer;
   margin-left: -50px;
   margin-top: -50px;

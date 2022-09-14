@@ -1,12 +1,13 @@
 .contain {
-  height: 100vh;
+  height: 110vh;
 }
 .container {
   padding: 10px;
   margin: auto;
-  width: 65%;
-  height: 90vh;
+  width: 70%;
+  height: 100vh;
   display: flex;
+  justify-content: space-between;
   top: 15%;
   left: 20%;
   border-radius: 20px;
@@ -15,12 +16,13 @@
 }
 .imageContainer {
   background-image: url("/public/images/welcome.png");
-  width: 32vw;
-  height: 90vh;
+  width: 35vw;
+  height: 100vh;
   background-size: contain;
   background-repeat: no-repeat;
   margin: -10px;
 }
+
 .signUpInput {
   margin: 10px 0;
   border-radius: 10px;
@@ -55,8 +57,8 @@ h2 {
   width: 100%;
   margin-top: 40px;
 }
-.halfForm1 {
-  margin-right: 40px;
+.halfForm2 {
+  margin-left: 10px;
 }
 .signHead {
   padding: 10px;
@@ -71,7 +73,7 @@ h2 {
   color: black;
 }
 @media screen and (max-width: 768px) {
-  .contain{
+  .contain {
     height: auto;
   }
   .container {
@@ -85,10 +87,10 @@ h2 {
   .imageContainer {
     display: none;
   }
-  .signUpInput{
-    margin: 10px 0px;
-  }
-  .signupForm{
+  .signupForm {
     flex-flow: column wrap;
+  }
+  .halfForm2{
+    margin-left: 0;
   }
 }

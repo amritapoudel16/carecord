@@ -107,7 +107,7 @@ const SignUpForm = () => {
               />
             </div>
 
-            <div>
+            <div className={styles.halfForm2}>
               <label className={styles.signUpLabel}>Age:</label>
               <br />
               <input

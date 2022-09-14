@@ -23,7 +23,7 @@ const DoctorDetails = () => {
     if (result.status === 200) {
       setDoctor(result.data.doctor);
       console.log(result.data);
-        }
+    }
   };
 
   useEffect(() => {
@@ -36,7 +36,11 @@ const DoctorDetails = () => {
           <img src={SERVER + doctor.picture} alt="home" />
         </div>
         <div className={styles.doctorDes}>
-          <h3>{doctor.first_name}</h3>
+          <h3>
+            {doctor.first_name}
+            &nbsp;
+            {doctor.last_name}
+          </h3>
           <h4>{doctor.department?.department_name}</h4>
           <p>
             s simplemente el texto de relleno de las imprentas y archivos de
