@@ -1,3 +1,6 @@
+.contain {
+  height: 100vh;
+}
 .container {
   padding: 10px;
   margin: auto;
@@ -68,14 +71,24 @@ h2 {
   color: black;
 }
 @media screen and (max-width: 768px) {
+  .contain{
+    height: auto;
+  }
   .container {
     width: 100%;
     height: auto;
     margin: 0;
     justify-content: center;
     align-items: center;
+    border-radius: 0px;
   }
   .imageContainer {
     display: none;
+  }
+  .signUpInput{
+    margin: 10px 0px;
+  }
+  .signupForm{
+    flex-flow: column wrap;
   }
 }

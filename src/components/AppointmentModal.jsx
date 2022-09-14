@@ -115,7 +115,7 @@ const AppointmentModal = ({ open = false, setOpen }) => {
                 placeholder="enter date"
                 dateFormat="dd/MM/yyyy"
                 minDate={new Date()}
-                filterDate={(date) => date.getDay() !== 6}
+                // filterDate={(date) => date.getDay() !== 6}
               />
             </div>
 
