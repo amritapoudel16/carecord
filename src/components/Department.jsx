@@ -20,26 +20,32 @@ const Department = () => {
   }, []);
 
   return (
-    <div id="department" className={styles.container}>
-      <div className={styles.image}></div>
+    <div>
+      <h1 className={styles.departmentTitle}>Our Departments</h1>
+      <div id="department" className={styles.container}>
+        <div className={styles.image}></div>
 
-      <div className={styles.gridContainer}>
-        {departments.map((department, id) => (
-          <div
-            className={styles.gridItems}
-            key={id}
-            onClick={() =>
-              navigate("/departmentdetails/" + department.department_id)
-            }
-          >
-            <div key={departments.id} className={styles.departmentName}>
-              {department.department_name}
+        <div className={styles.gridContainer}>
+          {departments.map((department, id) => (
+            <div
+              className={styles.gridItems}
+              key={id}
+              onClick={() =>
+                navigate("/departmentdetails/" + department.department_id)
+              }
+            >
+              <div key={departments.id} className={styles.departmentName}>
+                {department.department_name}
+              </div>
+              <div
+                key={departments.id}
+                className={styles.departmentDescription}
+              >
+                {department.description}
+              </div>
             </div>
-            <div key={departments.id} className={styles.departmentDescription}>
-              {department.description}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

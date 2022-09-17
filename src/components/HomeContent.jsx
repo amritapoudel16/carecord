@@ -36,6 +36,7 @@ const HomeContent = () => {
         </button>
         <AppointmentModal open={open} setOpen={() => setOpen((dat) => !dat)} />
       </div>
+      <span className={styles.overlay}></span>
     </div>
   );
 };

@@ -26,6 +26,7 @@
 
 .container2 h5 {
   color: lightseagreen;
+  font-size: 16px;
   letter-spacing: 1px;
 }
 .container2 h1 {
@@ -37,6 +38,7 @@
   width: 80%;
   margin-top: 20px;
   margin-left: 0;
+  font-size: 16px;
 }
 .homeButton {
   padding: 15px;
@@ -111,6 +113,16 @@
   font-size: 18px;
   color: black;
 }
+
+.overlay {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(46, 45, 45, 0.185);
+}
 @media screen and (max-width: 768px) {
   .container {
     width: 100%;
@@ -127,7 +139,6 @@
     font-size: 35px;
     text-align: center;
     padding: 0 8px;
-    
   }
   .container2 h5 {
     text-align: center;

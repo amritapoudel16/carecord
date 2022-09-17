@@ -51,7 +51,7 @@ const AppointmentModal = ({ open = false, setOpen }) => {
           (apiDate.getMonth() + 1) +
           "-" +
           apiDate.getDate(),
-        appoint_time: appointment.favorableTime,
+        favorable_time: appointment.favorableTime,
         symptoms: appointment.symptoms,
         doctor_id: appointment.doctor_id,
       },
@@ -101,6 +101,7 @@ const AppointmentModal = ({ open = false, setOpen }) => {
                 maxLength={100}
                 value={appointment.hospitalId}
                 onChange={handleChange}
+                required
               />
               <br />
               <label className={styles.appointmentLabel}>
@@ -115,6 +116,7 @@ const AppointmentModal = ({ open = false, setOpen }) => {
                 placeholder="enter date"
                 dateFormat="dd/MM/yyyy"
                 minDate={new Date()}
+                required
                 // filterDate={(date) => date.getDay() !== 6}
               />
             </div>
@@ -130,6 +132,7 @@ const AppointmentModal = ({ open = false, setOpen }) => {
                 className={styles.appointmentInput}
                 value={appointment.favorableTime}
                 onChange={handleChange}
+                required
               />
 
               <br />

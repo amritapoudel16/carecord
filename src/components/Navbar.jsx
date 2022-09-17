@@ -4,7 +4,7 @@ import styles from "./Navbar.module.css";
 import { UserContext } from "./../App";
 import AppointmentModal from "./AppointmentModal";
 import cx from "classnames";
-import { MdMenu } from "react-icons/md";
+import { MdMenu, MdPhone, MdEmail } from "react-icons/md";
 import apicall from "./../api/apicall";
 import MobileView from "./MobileView";
 
@@ -60,8 +60,13 @@ function Navbar() {
         className={cx(sticky ? styles.sticky : styles.none, styles.something)}
       >
         <div className={styles.topnavbar}>
-          <small>061-540806</small>
-          <small>carecord@gmail.com</small>
+          <small>
+            <MdPhone size={20} />
+            &nbsp; 061-540806
+          </small>
+          <small>
+            <MdEmail size={20} /> &nbsp; carecord@gmail.com
+          </small>
           {!muser.login ? (
             <div className={styles.toplinkbar}>
               <NavLink className={styles.toplink} to="/signUp">

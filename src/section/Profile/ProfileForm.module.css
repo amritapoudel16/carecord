@@ -1,0 +1,57 @@
+.profileContainer {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.profileForm {
+  height: 60vh;
+  width: 40vw;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-flow: column wrap;
+  border-radius: 5%;
+  padding: 20px 25px;
+  position: absolute;
+}
+label {
+  font-weight: 500;
+}
+.profileForm h2 {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.profileInput {
+  width: 100%;
+  border-style: none;
+  border-bottom: 1.5px solid black;
+  margin-bottom: 15px;
+}
+input:focus {
+  outline: none;
+}
+.profileButton1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileButton {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border-style: none;
+  font-family: "Poppins", sans-serif;
+  background-color: lightseagreen;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .profileForm {
+    width: 100%;
+    border-radius: none;
+  }
+}

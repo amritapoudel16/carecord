@@ -23,23 +23,29 @@ nav {
   height: 5vh;
 }
 small {
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .toplink {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px !important;
   color: white;
-  height: 5vh;
+  
   margin-left: 10px;
+  cursor: pointer;
 }
+
 .toplink2 {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
-  height: 5vh;
+
   margin-left: 10px;
-  display: inline;
+ 
+  cursor: pointer;
 }
 .navbar {
   height: 60px;
@@ -123,10 +129,16 @@ small {
 }
 .toplinkbar {
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .toplinkbar2 {
   overflow-x: hidden;
   display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width: 768px) {
   .menu {
