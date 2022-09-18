@@ -18,12 +18,18 @@ const apicall = async ({ method = "get", url = "", data = {} }) => {
       },
     });
   } catch (error) {
-    toast.error(error.message);
+    console.log(error);
+    if (error.response?.data) {
+      toast.error(error.response.data.message);
+    } else {
+      toast.error(error.message);
+    }
   }
 
   if (method !== "get") {
     if (res.status === 200 || 201) {
-      toast.success("success");
+      
+      toast.success(res.data.message);
     }
   }
 

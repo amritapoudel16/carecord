@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./SignUpForm.module.css";
-import axios from "axios";
+import { toast } from "react-toastify";
 import apicall from "../../api/apicall";
 
 const SignUpForm = () => {
@@ -40,7 +40,9 @@ const SignUpForm = () => {
         gender: user.gender,
       },
     });
-    navigate("/signIn");
+    // navigate("/signIn");
+    toast.success("Check your mail to verify your account");
+    // window.location.reload(false);
   };
 
   return (

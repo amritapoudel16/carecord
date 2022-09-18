@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import UserDashboard from "./components/UserDashboard";
 import "./app.css";
+import ConfirmationPage from './components/ConfirmationPage'
 import DepartmentDetails from "./pages/DepartmentDetails";
 import SignIn from "./pages/SignIn";
 import Navbar from "./components/Navbar";
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/appointment" element={<Home />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/confirmationLink" element={<ConfirmationPage />} />
           <Route path="/doctordetails/:id" element={<DoctorDetails />} />
           <Route
             path="/departmentdetails/:id"
