@@ -8,18 +8,18 @@
 }
 .image {
   background-image: url("/public/images/i3.jpg");
-  width: 100%;
+  width: 60%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.departmentTitle{
-  margin-bottom: 0!important;
+.departmentTitle {
+  margin-bottom: 0 !important;
   padding-top: 70px;
 }
 .gridContainer {
   display: grid;
- 
+  width: 85vw;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .gridItems {
@@ -34,7 +34,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
- 
 }
 .gridItems:nth-child(2) {
   background-color: #d16841;
@@ -76,5 +75,8 @@
   }
   .gridContainer {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .image {
+    display: none;
   }
 }

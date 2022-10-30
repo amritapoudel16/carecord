@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BsFillXCircleFill } from "react-icons/bs";
 import { Navigate } from "react-router-dom";
 import apicall from "../api/apicall";
+import { toast } from "react-toastify";
 import styles from "./AppointmentModal.module.css";
 
 const AppointmentModal = ({ open = false, setOpen }) => {
@@ -58,6 +59,7 @@ const AppointmentModal = ({ open = false, setOpen }) => {
     });
     if (res.status === 200) {
       setOpen((open) => !open);
+      toast.success("Please check your email for appointment confirmation");
     }
   };
   const onDateChanged = (date) => {
