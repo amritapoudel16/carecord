@@ -9,7 +9,7 @@ const Aboutus = () => {
         <h5>About us</h5>
         <h1 className={styles.about_title}>We are carecord clinic</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          Hey how are you? consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
